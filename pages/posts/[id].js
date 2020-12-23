@@ -2,6 +2,7 @@ import React from "react";
 import Layout from "../../components/layout";
 import Head from "next/head";
 import styled from "styled-components";
+import Image from "next/image";
 import { useAmp } from "next/amp";
 
 export const Content = styled.div`
@@ -28,7 +29,7 @@ export const Wrapper = styled.div`
   display: flex;
   align-items: center;
 `;
-export const ImageBorder = styled.img`
+export const ImageBorder = styled(Image)`
   border-radius: 40px;
   background: #fff;
   margin-right: 25px;
@@ -62,15 +63,16 @@ const Id = ({ post }) => {
       <Head>
         <title>{post.title}</title>
         <meta charSet='UTF-8' />
+        <meta name='viewport' content='initial-scale=1.0, width=device-width' />
         <meta property='og:title' content={post.title} key='ogtitle' />
         <meta property='og:description' content={post.body} key='ogdesc' />
         <meta
           property='og:image'
-          content='https://ikhsanblog.netlify.app/ikhsan.jpeg'
+          content='https://ikhsanblog.vercel.app/ikhsan.jpeg'
         />
         <meta
           property='og:image:secure_url'
-          content='https://ikhsanblog.netlify.app/ikhsan.jpeg'
+          content='https://ikhsanblog.vercel.app/ikhsan.jpeg'
         />
         <meta property='og:image:type' content='image/jpeg' />
         <meta property='og:image:width' content='500' />
@@ -103,10 +105,11 @@ const Id = ({ post }) => {
               layout='responsive'
             />
           ) : (
-            <img
+            <Image
               src='https://source.unsplash.com/1600x900/?nature,water'
               width={500}
               height={475}
+              layout='responsive'
             />
           )}
           <Body>{post.body}</Body>

@@ -81,11 +81,11 @@ const Home = ({ posts }) => {
         />
         <meta
           property='og:image'
-          content='https://ikhsanblog.netlify.app/ikhsan.jpeg'
+          content='https://ikhsanblog.vercel.app/ikhsan.jpeg'
         />
         <meta
           property='og:image:secure_url'
-          content='https://ikhsanblog.netlify.app/ikhsan.jpeg'
+          content='https://ikhsanblog.vercel.app/ikhsan.jpeg'
         />
         <meta property='og:image:type' content='image/jpeg' />
         <meta property='og:image:width' content='500' />
