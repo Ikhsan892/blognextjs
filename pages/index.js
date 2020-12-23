@@ -107,7 +107,7 @@ const Home = ({ posts }) => {
               <CardBlog
                 key={id}
                 id={id}
-                img='https://source.unsplash.com/1600x900/?nature,water'>
+                img='https://source.unsplash.com/1600x900'>
                 {title}
               </CardBlog>
             ))}

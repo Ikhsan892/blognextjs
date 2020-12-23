@@ -99,14 +99,14 @@ const Id = ({ post }) => {
           <hr />
           {isAmp ? (
             <amp-img
-              src='https://source.unsplash.com/1600x900/?nature,water'
+              src='https://source.unsplash.com/1600x900'
               width={500}
               height={475}
               layout='responsive'
             />
           ) : (
             <Image
-              src='https://source.unsplash.com/1600x900/?nature,water'
+              src='https://source.unsplash.com/1600x900'
               width={500}
               height={475}
               layout='responsive'
