@@ -2,7 +2,6 @@ import React from "react";
 import Layout from "../../components/layout";
 import Head from "next/head";
 import styled from "styled-components";
-import Image from "next/image";
 import { useAmp } from "next/amp";
 
 export const Content = styled.div`
@@ -29,7 +28,7 @@ export const Wrapper = styled.div`
   display: flex;
   align-items: center;
 `;
-export const ImageBorder = styled(Image)`
+export const ImageBorder = styled.img`
   border-radius: 40px;
   background: #fff;
   margin-right: 25px;
@@ -104,11 +103,10 @@ const Id = ({ post }) => {
               layout='responsive'
             />
           ) : (
-            <Image
+            <img
               src='https://source.unsplash.com/1600x900/?nature,water'
               width={500}
               height={475}
-              layout='responsive'
             />
           )}
           <Body>{post.body}</Body>
