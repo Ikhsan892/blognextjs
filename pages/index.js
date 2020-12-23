@@ -79,10 +79,13 @@ const Home = ({ posts }) => {
           content='Blog Ikhsan Created With NextJS SSG'
           key='ogdesc'
         />
-        <meta property='og:image' content='http://localhost:3000/ikhsan.jpeg' />
+        <meta
+          property='og:image'
+          content='https://ikhsanblog.netlify.app/ikhsan.jpeg'
+        />
         <meta
           property='og:image:secure_url'
-          content='http://localhost:3000/ikhsan.jpeg'
+          content='https://ikhsanblog.netlify.app/ikhsan.jpeg'
         />
         <meta property='og:image:type' content='image/jpeg' />
         <meta property='og:image:width' content='500' />

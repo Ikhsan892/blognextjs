@@ -66,10 +66,13 @@ const Id = ({ post }) => {
         <meta name='viewport' content='initial-scale=1.0, width=device-width' />
         <meta property='og:title' content={post.title} key='ogtitle' />
         <meta property='og:description' content={post.body} key='ogdesc' />
-        <meta property='og:image' content='http://localhost:3000/ikhsan.jpeg' />
+        <meta
+          property='og:image'
+          content='https://ikhsanblog.netlify.app/ikhsan.jpeg'
+        />
         <meta
           property='og:image:secure_url'
-          content='http://localhost:3000/ikhsan.jpeg'
+          content='https://ikhsanblog.netlify.app/ikhsan.jpeg'
         />
         <meta property='og:image:type' content='image/jpeg' />
         <meta property='og:image:width' content='500' />
