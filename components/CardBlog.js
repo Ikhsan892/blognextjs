@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import StyledLink from "./StyledLink";
-import Image from "next/image";
 
 export const Card = styled.div`
   width: 100%;
@@ -23,7 +22,7 @@ export const CardContent = styled.div`
   white-space: nowrap;
   overflow: hidden;
 `;
-export const CardImg = styled(Image)`
+export const CardImg = styled.img`
   border-radius: 10px 10px 0px 0px;
   object-fit: cover;
 `;
