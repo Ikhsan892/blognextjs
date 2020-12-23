@@ -63,7 +63,6 @@ const Id = ({ post }) => {
       <Head>
         <title>{post.title}</title>
         <meta charSet='UTF-8' />
-        <meta name='viewport' content='initial-scale=1.0, width=device-width' />
         <meta property='og:title' content={post.title} key='ogtitle' />
         <meta property='og:description' content={post.body} key='ogdesc' />
         <meta
