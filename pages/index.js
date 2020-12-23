@@ -1,209 +1,124 @@
-import Head from 'next/head'
+import React, { useState } from "react";
+import Head from "next/head";
+import Layout from "../components/layout";
+import styled from "styled-components";
+import CardBlog from "../components/CardBlog";
 
-export default function Home() {
-  return (
-    <div className="container">
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+export const Content = styled.div`
+  color: ${(props) => props.theme.text};
+  margin-top: 40px;
+  width: 100%;
+  height: 100%;
+`;
+export const CardWrapper = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 1rem;
+  justify-content: center;
+`;
+export const Pagination = styled.div`
+  margin-top: 25px;
+  width: 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+export const Button = styled.button`
+  padding: 5px;
+  font-size: 2rem;
+  color: ${(props) => props.theme.text};
+  border-radius: 40px;
+  background: none;
+  border: ${(props) => `1px solid ${props.theme.text}`};
+  transition: 0.2s all ease-in-out;
+  &:hover {
+    transition: 0.2s all ease-in-out;
+    color: #fff;
+    cursor: pointer;
+    background: ${(props) => props.theme.primary.main};
+  }
+`;
+export const Bottom = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 
-      <main>
-        <h1 className="title">
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className="description">
-          Get started by editing <code>pages/index.js</code>
-        </p>
-
-        <div className="grid">
-          <a href="https://nextjs.org/docs" className="card">
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className="card">
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className="card"
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="card"
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className="logo" />
-        </a>
-      </footer>
-
-      <style jsx>{`
-        .container {
-          min-height: 100vh;
-          padding: 0 0.5rem;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
-
-        main {
-          padding: 5rem 0;
-          flex: 1;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
-
-        footer {
-          width: 100%;
-          height: 100px;
-          border-top: 1px solid #eaeaea;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-
-        footer img {
-          margin-left: 0.5rem;
-        }
-
-        footer a {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-
-        a {
-          color: inherit;
-          text-decoration: none;
-        }
-
-        .title a {
-          color: #0070f3;
-          text-decoration: none;
-        }
-
-        .title a:hover,
-        .title a:focus,
-        .title a:active {
-          text-decoration: underline;
-        }
-
-        .title {
-          margin: 0;
-          line-height: 1.15;
-          font-size: 4rem;
-        }
-
-        .title,
-        .description {
-          text-align: center;
-        }
-
-        .description {
-          line-height: 1.5;
-          font-size: 1.5rem;
-        }
-
-        code {
-          background: #fafafa;
-          border-radius: 5px;
-          padding: 0.75rem;
-          font-size: 1.1rem;
-          font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-            DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
-        }
-
-        .grid {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-wrap: wrap;
-
-          max-width: 800px;
-          margin-top: 3rem;
-        }
-
-        .card {
-          margin: 1rem;
-          flex-basis: 45%;
-          padding: 1.5rem;
-          text-align: left;
-          color: inherit;
-          text-decoration: none;
-          border: 1px solid #eaeaea;
-          border-radius: 10px;
-          transition: color 0.15s ease, border-color 0.15s ease;
-        }
-
-        .card:hover,
-        .card:focus,
-        .card:active {
-          color: #0070f3;
-          border-color: #0070f3;
-        }
-
-        .card h3 {
-          margin: 0 0 1rem 0;
-          font-size: 1.5rem;
-        }
-
-        .card p {
-          margin: 0;
-          font-size: 1.25rem;
-          line-height: 1.5;
-        }
-
-        .logo {
-          height: 1em;
-        }
-
-        @media (max-width: 600px) {
-          .grid {
-            width: 100%;
-            flex-direction: column;
-          }
-        }
-      `}</style>
-
-      <style jsx global>{`
-        html,
-        body {
-          padding: 0;
-          margin: 0;
-          font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-            Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-            sans-serif;
-        }
-
-        * {
-          box-sizing: border-box;
-        }
-      `}</style>
-    </div>
-  )
+export async function getStaticProps() {
+  const res = await fetch("https://jsonplaceholder.typicode.com/posts");
+  const posts = await res.json();
+  return {
+    props: {
+      posts,
+    },
+  };
 }
+const Home = ({ posts }) => {
+  const [max] = useState(5);
+  const [current, setCurrent] = useState(0);
+  const firstOffset = current * max;
+  const lastOffset = current * max + max;
+  const page = parseInt(posts.length / max) - 1;
+  const nextPage = () => setCurrent(current >= page ? page : current + 1);
+  const prevPage = () => setCurrent(current <= 0 ? 0 : current - 1);
+  console.log(current);
+  return (
+    <>
+      <Head>
+        <title>Ikhsan's Blog | Blog With NextJS</title>
+        <meta charSet='UTF-8' />
+        <meta name='viewport' content='initial-scale=1.0, width=device-width' />
+        <meta
+          property='og:title'
+          content="Ikhsan's Blog | Blog With NextJS"
+          key='ogtitle'
+        />
+        <meta
+          property='og:description'
+          content='Blog Ikhsan Created With NextJS SSG'
+          key='ogdesc'
+        />
+        <meta property='og:image' content='http://localhost:3000/ikhsan.jpeg' />
+        <meta
+          property='og:image:secure_url'
+          content='http://localhost:3000/ikhsan.jpeg'
+        />
+        <meta property='og:image:type' content='image/jpeg' />
+        <meta property='og:image:width' content='500' />
+        <meta property='og:image:height' content='500' />
+        <meta property='og:image:alt' content='My Foto' />
+        <meta property='og:type' content='website' />
+        <meta name='twitter:card' content='summary' key='twcard' />
+        <meta name='twitter:creator' content='Ikhsan' key='twhandle' />
+        <meta
+          name='description'
+          content='Blog Ikhsan Created With NextJS SSG'
+        />
+        <meta name='robots' content='index, follow' />
+      </Head>
+      <Layout>
+        <Content>
+          <CardWrapper>
+            {posts.slice(firstOffset, lastOffset).map(({ id, title }) => (
+              <CardBlog
+                key={id}
+                id={id}
+                img='https://source.unsplash.com/1600x900/?nature,water'>
+                {title}
+              </CardBlog>
+            ))}
+          </CardWrapper>
+          <Bottom>
+            <Pagination>
+              <Button onClick={prevPage}>&laquo;</Button>
+              <Button onClick={nextPage}>&raquo;</Button>
+            </Pagination>
+          </Bottom>
+        </Content>
+      </Layout>
+    </>
+  );
+};
+
+export default Home;
