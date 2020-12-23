@@ -65,6 +65,10 @@ const Id = ({ post }) => {
         <meta charSet='UTF-8' />
         <meta name='viewport' content='initial-scale=1.0, width=device-width' />
         <meta property='og:title' content={post.title} key='ogtitle' />
+        <meta
+          name='google-site-verification'
+          content='tNCtg5ajBHo0H9zp_290WlUIDBqUuO6dJsLqF3ENu2s'
+        />
         <meta property='og:description' content={post.body} key='ogdesc' />
         <meta
           property='og:image'
